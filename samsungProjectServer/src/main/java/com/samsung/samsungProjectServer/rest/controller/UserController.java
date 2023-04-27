@@ -16,7 +16,7 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping("/user")
-    public UserDto createNewUser(@RequestBody UserDto userDto){
+    public UserDto saveUser(@RequestBody UserDto userDto){
 
         User user = userService.save(UserDto.toDomainObject(userDto));
 
@@ -25,9 +25,17 @@ public class UserController {
     }
 
     @GetMapping("/user")
-    public UserDto getAuthorByEmail(@RequestParam String email){
+    public UserDto getUserByEmail(@RequestParam String email){
 
         User user = userService.findUserByEmail(email);
+
+        return UserDto.toDto(user);
+    }
+
+    @GetMapping("/user/{id}")
+    public UserDto getUserById(@PathVariable("id") long id){
+
+        User user = userService.findUserById(id);
 
         return UserDto.toDto(user);
 

@@ -11,7 +11,6 @@ import lombok.RequiredArgsConstructor;
 @Data
 public class UserDto {
 
-    private final long id;
 
     private final String email;
 
@@ -19,26 +18,26 @@ public class UserDto {
 
     private final String password;
 
-    private final int points;
+    private final String role;
 
     public static UserDto toDto(User user){
 
-        return UserDto.builder().id(user.getId())
+        return UserDto.builder()
                 .nickname(user.getNickname())
                 .email(user.getEmail())
                 .password(user.getPassword())
-                .points(user.getPoints())
+                .role(user.getRole())
                 .build();
 
     }
 
     public static User toDomainObject(UserDto userDto){
 
-        return User.builder().id(userDto.getId())
+        return User.builder()
                 .nickname(userDto.getNickname())
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
-                .points(userDto.getPoints())
+                .role(userDto.getRole())
                 .build();
 
     }

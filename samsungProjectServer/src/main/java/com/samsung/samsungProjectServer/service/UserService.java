@@ -7,4 +7,6 @@ public interface UserService {
     User save(User user);
 
     User findUserByEmail(String email);
+
+    User findUserById(long id);
 }

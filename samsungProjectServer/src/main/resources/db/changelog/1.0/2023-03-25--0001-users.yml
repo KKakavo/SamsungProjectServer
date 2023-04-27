@@ -1,0 +1,44 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-03-25--0001-user
+      author: KKakavo
+      preConditions:
+        not:
+          tableExists:
+            tableName: users
+      createTable:
+        tableName: users
+        columns:
+          - column:
+             name: id
+             type: bigint
+             autoIncrement: true
+             constraints:
+               nullable: false
+               primaryKey: true
+               primaryKeyName: pk_user
+
+          - column:
+              name: nickname
+              type: varchar(200)
+              constraints:
+                nullable: false
+
+          - column:
+              name: email
+              type: varchar(200)
+              constraints:
+                nullable: false
+                unique: true
+
+          - column:
+              name: password
+              type: varchar(200)
+              constraints:
+                nullable: false
+
+          - column:
+              name: role
+              type: varchar(200)
+              constraints:
+                nullable: false

@@ -23,7 +23,7 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
 
         if(userRepository.findByEmail(user.getEmail()).isPresent())
-            throw new UserAlreadyExistsException("User with email" + user.getEmail() + " already exists.");
+            throw new UserAlreadyExistsException("User with email " + user.getEmail() + " already exists.");
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
@@ -39,4 +39,14 @@ public class UserServiceImpl implements UserService {
                 () -> new UserNotFoundException("User with email " + email + " is not exists."));
 
     }
+
+    @Override
+    public User findUserById(long id) {
+
+        return userRepository.findById(id).orElseThrow(
+                () -> new UserNotFoundException("User with id " + id + " is not exists"));
+
+    }
+
+
 }

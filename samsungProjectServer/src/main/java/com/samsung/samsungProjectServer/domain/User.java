@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 @Data
 public class User {
 
@@ -28,7 +28,8 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "points")
-    private int points;
+    @Column(name = "role")
+    private String role;
+
 
 }
