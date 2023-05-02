@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequiredArgsConstructor
 public class UserController {
@@ -32,18 +33,9 @@ public class UserController {
         return UserDto.toDto(user);
     }
 
-    @GetMapping("/user/{id}")
-    public UserDto getUserById(@PathVariable("id") long id){
-
-        User user = userService.findUserById(id);
-
-        return UserDto.toDto(user);
-
-    }
 
     @ExceptionHandler({UserAlreadyExistsException.class, UserNotFoundException.class})
     public ResponseEntity<String> handlerUserException(Exception e){
-
         return ResponseEntity.badRequest().body(e.getMessage());
 
     }

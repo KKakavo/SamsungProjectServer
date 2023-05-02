@@ -16,7 +16,7 @@ databaseChangeLog:
              constraints:
                nullable: false
                primaryKey: true
-               primaryKeyName: pk_user
+               primaryKeyName: pk_users
 
           - column:
               name: nickname

@@ -9,7 +9,6 @@ public class SamsungProjectServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SamsungProjectServerApplication.class, args);
-
 	}
 
 }

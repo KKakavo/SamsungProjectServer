@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-29--000-points
+      author: KKakavo
+      preConditions:
+        not:
+          tableExists:
+            tableName: points
+      createTable:
+        tableName: points
+        columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_points
+
+          - column:
+              name: latitude
+              type: float
+              constraints:
+                nullable: false
+
+          - column:
+              name: longitude
+              type: float
+              constraints:
+                nullable: false
+
+          - column:
+              name: shape_id
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_points_shapes
+                references: shapes(id)
+                deleteCascade: true

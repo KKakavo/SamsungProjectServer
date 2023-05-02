@@ -22,6 +22,7 @@ public class SecurityConfiguration {
 
         return http.csrf().disable().authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST, "/user").permitAll()
+                .requestMatchers(HttpMethod.GET, "/user").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic(Customizer.withDefaults()).build();
 

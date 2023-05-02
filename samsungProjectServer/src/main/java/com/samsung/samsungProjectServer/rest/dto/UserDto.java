@@ -1,24 +1,21 @@
 package com.samsung.samsungProjectServer.rest.dto;
 
 import com.samsung.samsungProjectServer.domain.User;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 
-@RequiredArgsConstructor
+@AllArgsConstructor
+@NoArgsConstructor
 @Builder
 @Data
 public class UserDto {
 
+    private String email;
 
-    private final String email;
+    private String nickname;
 
-    private final String nickname;
+    private String password;
 
-    private final String password;
-
-    private final String role;
+    private String role;
 
     public static UserDto toDto(User user){
 

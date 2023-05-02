@@ -1,0 +1,28 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-29--0002-shapes
+      author: KKakavo
+      preConditions:
+        not:
+          tableExists:
+            tableName: shapes
+      createTable:
+        tableName: shapes
+        columns:
+          - column:
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_shapes
+
+          - column:
+              name: user_id
+              type: bigint
+              constraints:
+                nullable: false
+                foreignKeyName: fk_shapes_users
+                references: users(id)
+                deleteCascade: true

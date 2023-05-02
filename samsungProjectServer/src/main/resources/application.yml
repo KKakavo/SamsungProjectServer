@@ -16,7 +16,7 @@ spring:
 
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    showsql: true
+    show-sql: true
     generate-ddl: false
     hibernate:
       ddl-auto: none
