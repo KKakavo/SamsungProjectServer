@@ -14,22 +14,22 @@ import lombok.NoArgsConstructor;
 public class PointDto {
 
 
+    private long id;
     private double latitude;
-
     private double longitude;
-
     public static PointDto toDto(Point point) {
         return PointDto.builder()
+                .id(point.getId())
                 .latitude(point.getLatitude())
                 .longitude(point.getLongitude())
                 .build();
     }
 
-    public static Point toDomainObject(PointDto pointDto, Shape shape){
+    public static Point toDomainObject(PointDto pointDto){
         return Point.builder()
+                .id(pointDto.getId())
                 .latitude(pointDto.getLatitude())
                 .longitude(pointDto.getLongitude())
-                .shape(shape)
                 .build();
     }
 

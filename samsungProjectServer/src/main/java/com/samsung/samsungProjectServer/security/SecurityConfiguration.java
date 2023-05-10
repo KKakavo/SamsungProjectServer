@@ -23,6 +23,8 @@ public class SecurityConfiguration {
         return http.csrf().disable().authorizeHttpRequests()
                 .requestMatchers(HttpMethod.POST, "/user").permitAll()
                 .requestMatchers(HttpMethod.GET, "/user").permitAll()
+                .requestMatchers(HttpMethod.POST, "/shape").permitAll()
+                .requestMatchers(HttpMethod.POST, "/shape/all").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic(Customizer.withDefaults()).build();
 

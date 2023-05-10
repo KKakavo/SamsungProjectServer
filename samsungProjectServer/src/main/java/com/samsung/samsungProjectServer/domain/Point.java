@@ -24,7 +24,6 @@ public class Point {
     @Column(name = "longitude")
     private double longitude;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "shape_id")
+    @ManyToOne(fetch = FetchType.LAZY)
     private Shape shape;
 }

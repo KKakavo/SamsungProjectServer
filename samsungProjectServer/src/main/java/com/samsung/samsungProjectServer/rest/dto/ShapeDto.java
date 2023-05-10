@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,19 +18,29 @@ import java.util.List;
 public class ShapeDto {
 
 
+    private long id;
     private User user;
-
-    private List<Point> pointList;
+    private List<PointDto> pointList;
 
     public static ShapeDto toDto(Shape shape){
         return ShapeDto.builder()
-                .pointList(shape.getPointList())
+                .id(shape.getId())
+                .user(shape.getUser())
+                .pointList(shape.getPointList()
+                        .stream()
+                        .map(PointDto::toDto)
+                        .collect(Collectors.toList()))
                 .build();
     }
 
     public static Shape toDomainObject(ShapeDto shapeDto){
         return Shape.builder()
-                .pointList(shapeDto.getPointList())
+                .id(shapeDto.getId())
+                .user(shapeDto.getUser())
+                .pointList(shapeDto.getPointList()
+                        .stream()
+                        .map(PointDto::toDomainObject)
+                        .collect(Collectors.toList()))
                 .build();
     }
 }
