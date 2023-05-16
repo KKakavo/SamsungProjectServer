@@ -29,6 +29,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "score")
+    private long score;
+
     @Column(name = "role")
     private String role;
 

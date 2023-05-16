@@ -26,4 +26,13 @@ public class Point {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Shape shape;
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "id=" + id +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                '}';
+    }
 }

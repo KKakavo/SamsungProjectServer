@@ -10,6 +10,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 
 @Service
 @RequiredArgsConstructor
@@ -24,7 +26,7 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
 
         if(userRepository.findByEmail(user.getEmail()).isPresent())
-            throw new UserAlreadyExistsException("User with email " + user.getEmail() + " already exists.");
+            throw new UserAlreadyExistsException("User with email = " + user.getEmail() + " already exists.");
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
@@ -36,10 +38,25 @@ public class UserServiceImpl implements UserService {
     public User findUserByEmail(String email) {
 
         return userRepository.findByEmail(email).orElseThrow(
-                () -> new UserNotFoundException("User with email " + email + " is not exists."));
+                () -> new UserNotFoundException("User with email = " + email + " is not exists."));
 
     }
 
+    @Override
+    public User updateUserScoreById(long id, int score) {
+        return null;
+    }
+
+    @Override
+    public User findUserById(long id) {
+        return userRepository.findById(id).orElseThrow(
+                () -> new UserNotFoundException("User with id = " + id + " not found"));
+    }
+
+    @Override
+    public List<User> getLeaderBoard() {
+        return userRepository.getLeaderBoard();
+    }
 
 
 }

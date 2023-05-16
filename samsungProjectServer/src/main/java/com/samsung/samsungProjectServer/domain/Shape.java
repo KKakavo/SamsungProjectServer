@@ -25,6 +25,9 @@ public class Shape {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @Column(name = "color")
+    private int color;
+
     @OneToMany(targetEntity = Point.class, cascade = CascadeType.ALL, mappedBy = "shape")
     private List<Point> pointList;
 

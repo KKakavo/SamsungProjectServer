@@ -9,4 +9,5 @@ public interface ShapeService {
     List<Shape> getShapesByUserId(long id);
     List<Shape> getAllShapes();
     List<Shape> saveAllShapes(List<Shape> shapeList);
+    List<Shape> getRecentShapes(long id);
 }

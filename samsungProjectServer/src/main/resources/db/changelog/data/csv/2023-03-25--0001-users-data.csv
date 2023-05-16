@@ -1,3 +1,3 @@
-nickname;email;password;role
-Nastya;email1;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;user
-Lena;email2;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;user
+nickname;email;password;score;role
+Nastya;email1;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;10;user
+Lena;email2;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;20;user

@@ -1,6 +1,5 @@
 package com.samsung.samsungProjectServer.service.impl;
 
-import com.samsung.samsungProjectServer.domain.Point;
 import com.samsung.samsungProjectServer.domain.Shape;
 import com.samsung.samsungProjectServer.repository.PointRepository;
 import com.samsung.samsungProjectServer.repository.ShapeRepository;
@@ -11,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
 @Service
 @RequiredArgsConstructor
@@ -47,5 +45,11 @@ public class ShapeServiceImpl implements ShapeService {
         }
         return savedShapes;
     }
+
+    @Override
+    public List<Shape> getRecentShapes(long id) {
+        return shapeRepository.getRecentShapes(id);
+    }
+
 
 }

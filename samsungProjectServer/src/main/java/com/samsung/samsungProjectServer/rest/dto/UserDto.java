@@ -15,6 +15,7 @@ public class UserDto {
     private String email;
     private String nickname;
     private String password;
+    private long score;
     private String role;
 
     public static UserDto toDto(User user){
@@ -24,6 +25,7 @@ public class UserDto {
                 .nickname(user.getNickname())
                 .email(user.getEmail())
                 .password(user.getPassword())
+                .score(user.getScore())
                 .role(user.getRole())
                 .build();
 
@@ -36,6 +38,7 @@ public class UserDto {
                 .nickname(userDto.getNickname())
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
+                .score(userDto.getScore())
                 .role(userDto.getRole())
                 .build();
 

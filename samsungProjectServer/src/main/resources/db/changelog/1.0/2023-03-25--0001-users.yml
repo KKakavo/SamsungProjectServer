@@ -10,13 +10,13 @@ databaseChangeLog:
         tableName: users
         columns:
           - column:
-             name: id
-             type: bigint
-             autoIncrement: true
-             constraints:
-               nullable: false
-               primaryKey: true
-               primaryKeyName: pk_users
+              name: id
+              type: bigint
+              autoIncrement: true
+              constraints:
+                nullable: false
+                primaryKey: true
+                primaryKeyName: pk_users
 
           - column:
               name: nickname
@@ -36,6 +36,12 @@ databaseChangeLog:
               type: varchar(200)
               constraints:
                 nullable: false
+
+          - column:
+              name: score
+              type: bigint
+              constraints:
+                nullable: true
 
           - column:
               name: role

@@ -3,11 +3,15 @@ package com.samsung.samsungProjectServer.rest.controller;
 import com.samsung.samsungProjectServer.domain.User;
 import com.samsung.samsungProjectServer.exception.UserAlreadyExistsException;
 import com.samsung.samsungProjectServer.exception.UserNotFoundException;
+import com.samsung.samsungProjectServer.rest.dto.ShapeDto;
 import com.samsung.samsungProjectServer.rest.dto.UserDto;
 import com.samsung.samsungProjectServer.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -33,7 +37,16 @@ public class UserController {
         return UserDto.toDto(user);
     }
 
-
+    @PatchMapping("/user/{id}")
+    public UserDto updateUserScoreById(@PathVariable("id") long id,
+            @RequestParam("score") int score){
+        User user = userService.updateUserScoreById(id, score);
+        return UserDto.toDto(user);
+    }
+    @GetMapping("/user/leaderboard")
+    public List<UserDto> getRecentShapes(){
+        return userService.getLeaderBoard().stream().map(UserDto::toDto).collect(Collectors.toList());
+    }
     @ExceptionHandler({UserAlreadyExistsException.class, UserNotFoundException.class})
     public ResponseEntity<String> handlerUserException(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());

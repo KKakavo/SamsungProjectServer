@@ -26,3 +26,8 @@ databaseChangeLog:
                 foreignKeyName: fk_shapes_users
                 references: users(id)
                 deleteCascade: true
+          - column:
+              name: color
+              type: int
+              constraints:
+                nullable: false

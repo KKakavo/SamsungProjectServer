@@ -20,6 +20,7 @@ public class ShapeDto {
 
     private long id;
     private User user;
+    private int color;
     private List<PointDto> pointList;
 
     public static ShapeDto toDto(Shape shape){
@@ -30,6 +31,7 @@ public class ShapeDto {
                         .stream()
                         .map(PointDto::toDto)
                         .collect(Collectors.toList()))
+                .color(shape.getColor())
                 .build();
     }
 
@@ -41,6 +43,7 @@ public class ShapeDto {
                         .stream()
                         .map(PointDto::toDomainObject)
                         .collect(Collectors.toList()))
+                .color(shapeDto.getColor())
                 .build();
     }
 }

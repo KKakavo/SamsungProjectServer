@@ -36,11 +36,11 @@ public class ShapeController {
     }
     @GetMapping("/shape/all")
     public List<ShapeDto> getAllShapes(){
-        List<ShapeDto> shapeDtoList= new ArrayList<>();
-        for (Shape shape : shapeService.getAllShapes()) {
-            shapeDtoList.add(ShapeDto.toDto(shape));
-        }
-        return shapeDtoList;
+        return shapeService.getAllShapes().stream().map(ShapeDto::toDto).collect(Collectors.toList());
+    }
+    @GetMapping("/shape/recent")
+    public List<ShapeDto> getRecentShapes(@RequestParam("id") long id){
+        return shapeService.getRecentShapes(id).stream().map(ShapeDto::toDto).collect(Collectors.toList());
     }
 
 }
