@@ -37,20 +37,19 @@ public class UserController {
         return UserDto.toDto(user);
     }
 
-    @PatchMapping("/user/{id}")
-    public UserDto updateUserScoreById(@PathVariable("id") long id,
-            @RequestParam("score") int score){
-        User user = userService.updateUserScoreById(id, score);
-        return UserDto.toDto(user);
-    }
     @GetMapping("/user/leaderboard")
     public List<UserDto> getRecentShapes(){
         return userService.getLeaderBoard().stream().map(UserDto::toDto).collect(Collectors.toList());
     }
+    @PatchMapping("user/{id}/score")
+    public void updateUserScoreById(@PathVariable("id") long id,
+                           @RequestParam("score") long score){
+        userService.updateUserScoreById(id, score);
+    }
+
     @ExceptionHandler({UserAlreadyExistsException.class, UserNotFoundException.class})
     public ResponseEntity<String> handlerUserException(Exception e){
         return ResponseEntity.badRequest().body(e.getMessage());
-
     }
 
 }

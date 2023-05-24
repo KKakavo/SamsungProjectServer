@@ -38,6 +38,7 @@ public class ShapeServiceImpl implements ShapeService {
     }
 
     @Override
+    @Transactional
     public List<Shape> saveAllShapes(List<Shape> shapeList) {
         List<Shape> savedShapes = new ArrayList<>();
         for (Shape shape : shapeList) {
@@ -47,6 +48,7 @@ public class ShapeServiceImpl implements ShapeService {
     }
 
     @Override
+    @Transactional
     public List<Shape> getRecentShapes(long id) {
         return shapeRepository.getRecentShapes(id);
     }

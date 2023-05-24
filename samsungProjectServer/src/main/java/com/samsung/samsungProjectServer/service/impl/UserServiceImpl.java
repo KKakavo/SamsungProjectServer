@@ -42,20 +42,24 @@ public class UserServiceImpl implements UserService {
 
     }
 
-    @Override
-    public User updateUserScoreById(long id, int score) {
-        return null;
-    }
 
     @Override
+    @Transactional
     public User findUserById(long id) {
         return userRepository.findById(id).orElseThrow(
                 () -> new UserNotFoundException("User with id = " + id + " not found"));
     }
 
     @Override
+    @Transactional
     public List<User> getLeaderBoard() {
         return userRepository.getLeaderBoard();
+    }
+
+    @Override
+    @Transactional
+    public void updateUserScoreById(long id, long score) {
+        userRepository.updateScoreById(id, score);
     }
 
 

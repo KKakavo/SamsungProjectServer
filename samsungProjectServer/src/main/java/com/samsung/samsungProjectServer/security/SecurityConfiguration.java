@@ -24,9 +24,11 @@ public class SecurityConfiguration {
                 .requestMatchers(HttpMethod.POST, "/user").permitAll()
                 .requestMatchers(HttpMethod.GET, "/user").permitAll()
                 .requestMatchers(HttpMethod.GET,"user/leaderboard").permitAll()
+                .requestMatchers(HttpMethod.PATCH, "user/{id}/score").permitAll()
                 .requestMatchers(HttpMethod.POST, "/shape").permitAll()
                 .requestMatchers(HttpMethod.POST, "/shape/all").permitAll()
                 .requestMatchers(HttpMethod.GET, "/shape/all").permitAll()
+                .requestMatchers(HttpMethod.GET, "shape/recent").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic(Customizer.withDefaults()).build();
 

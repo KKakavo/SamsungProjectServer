@@ -10,7 +10,7 @@ public interface UserService {
 
     User findUserByEmail(String email);
 
-    User updateUserScoreById(long id, int score);
     User findUserById(long id);
     List<User> getLeaderBoard();
+    void updateUserScoreById(long id, long score);
 }
