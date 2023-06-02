@@ -1,3 +1,9 @@
 nickname;email;password;score;role
 Nastya;email1;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;10;user
 Lena;email2;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;20;user
+CoolUser;email3;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;140;user
+SadUser;email4;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;0;user
+BestUser;email5;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;1402312;user
+InterestingUser;email6;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;777;user
+BadUser;email7;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;690;user
+User;email8;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;420;user

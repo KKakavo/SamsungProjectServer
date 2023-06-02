@@ -11,6 +11,6 @@ public interface UserService {
     User findUserByEmail(String email);
 
     User findUserById(long id);
-    List<User> getLeaderBoard();
+    List<User> getLeaderboard();
     void updateUserScoreById(long id, long score);
 }

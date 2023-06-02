@@ -52,8 +52,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public List<User> getLeaderBoard() {
-        return userRepository.getLeaderBoard();
+    public List<User> getLeaderboard() {
+        return userRepository.getLeaderboard();
     }
 
     @Override

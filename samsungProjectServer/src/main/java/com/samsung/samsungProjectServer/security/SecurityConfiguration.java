@@ -21,17 +21,16 @@ public class SecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         return http.csrf().disable().authorizeHttpRequests()
-                .requestMatchers(HttpMethod.POST, "/user").permitAll()
+                /*.requestMatchers(HttpMethod.POST, "/user").permitAll()
                 .requestMatchers(HttpMethod.GET, "/user").permitAll()
-                .requestMatchers(HttpMethod.GET,"user/leaderboard").permitAll()
-                .requestMatchers(HttpMethod.PATCH, "user/{id}/score").permitAll()
+                .requestMatchers(HttpMethod.GET,"/user/leaderboard").permitAll()
+                .requestMatchers(HttpMethod.PATCH, "/user/{id}/score").permitAll()
                 .requestMatchers(HttpMethod.POST, "/shape").permitAll()
                 .requestMatchers(HttpMethod.POST, "/shape/all").permitAll()
                 .requestMatchers(HttpMethod.GET, "/shape/all").permitAll()
-                .requestMatchers(HttpMethod.GET, "shape/recent").permitAll()
-                .anyRequest().authenticated()
+                .requestMatchers(HttpMethod.GET, "/shape/recent").permitAll()*/
+                .anyRequest().permitAll()
                 .and().httpBasic(Customizer.withDefaults()).build();
 
     }
-
 }

@@ -15,6 +15,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ShapeServiceImpl implements ShapeService {
 
+    private static long controlSum;
     private final ShapeRepository shapeRepository;
     private final PointRepository pointRepository;
 
@@ -22,6 +23,7 @@ public class ShapeServiceImpl implements ShapeService {
     @Transactional
     public Shape save(Shape shape) {
         shape.getPointList().forEach(shape::savePoint);
+        controlSum++;
         return shapeRepository.save(shape);
     }
 
@@ -40,17 +42,25 @@ public class ShapeServiceImpl implements ShapeService {
     @Override
     @Transactional
     public List<Shape> saveAllShapes(List<Shape> shapeList) {
-        List<Shape> savedShapes = new ArrayList<>();
-        for (Shape shape : shapeList) {
-            savedShapes.add(save(shape));
-        }
-        return savedShapes;
+        shapeList.forEach(shape -> {
+            shape.getPointList().forEach(shape::savePoint);
+            shapeRepository.save(shape);
+        });
+        controlSum+=shapeList.size();
+        return shapeList;
     }
 
     @Override
     @Transactional
-    public List<Shape> getRecentShapes(long id) {
-        return shapeRepository.getRecentShapes(id);
+    public List<Shape> getRecentShapes(long id, long controlSum) {
+        if(ShapeServiceImpl.controlSum != controlSum)
+            return shapeRepository.getRecentShapes(id);
+        return new ArrayList<>();
+    }
+
+    @Override
+    public long getControlSum() {
+        return controlSum;
     }
 
 

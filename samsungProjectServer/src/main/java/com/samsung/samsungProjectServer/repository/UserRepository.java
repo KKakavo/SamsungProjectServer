@@ -15,7 +15,7 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User, Long> {
     Optional<User> findByEmail(String email);
     @Query("SELECT u FROM User u ORDER BY u.score DESC LIMIT 50")
-    List<User> getLeaderBoard();
+    List<User> getLeaderboard();
     @Modifying
     @Query("UPDATE User u SET u.score = :score WHERE u.id = :id")
     void updateScoreById(@Param("id")long id, @Param("score")long score);

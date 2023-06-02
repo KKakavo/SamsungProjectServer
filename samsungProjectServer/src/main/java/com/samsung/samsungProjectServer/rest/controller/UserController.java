@@ -38,8 +38,8 @@ public class UserController {
     }
 
     @GetMapping("/user/leaderboard")
-    public List<UserDto> getRecentShapes(){
-        return userService.getLeaderBoard().stream().map(UserDto::toDto).collect(Collectors.toList());
+    public List<UserDto> getLeaderboard(){
+        return userService.getLeaderboard().stream().map(UserDto::toDto).collect(Collectors.toList());
     }
     @PatchMapping("user/{id}/score")
     public void updateUserScoreById(@PathVariable("id") long id,
