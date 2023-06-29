@@ -35,4 +35,9 @@ public class User {
     @Column(name = "role")
     private String role;
 
+    @Column(name = "latitude")
+    private double latitude;
+
+    @Column(name = "longitude")
+    private double longitude;
 }

@@ -50,6 +50,7 @@ public class UserServiceImpl implements UserService {
                 () -> new UserNotFoundException("User with id = " + id + " not found"));
     }
 
+
     @Override
     @Transactional
     public List<User> getLeaderboard() {
@@ -60,6 +61,12 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public void updateUserScoreById(long id, long score) {
         userRepository.updateScoreById(id, score);
+    }
+
+    @Override
+    @Transactional
+    public void updateUserLocationById(long id, double latitude, double longitude) {
+        userRepository.updateLocationById(id, latitude, longitude);
     }
 
 

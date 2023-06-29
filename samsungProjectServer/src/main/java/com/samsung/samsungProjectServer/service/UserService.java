@@ -13,4 +13,5 @@ public interface UserService {
     User findUserById(long id);
     List<User> getLeaderboard();
     void updateUserScoreById(long id, long score);
+    void updateUserLocationById(long id, double latitude, double longitude);
 }

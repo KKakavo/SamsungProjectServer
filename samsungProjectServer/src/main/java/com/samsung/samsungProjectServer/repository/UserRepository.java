@@ -19,4 +19,8 @@ public interface UserRepository extends JpaRepository<User, Long> {
     @Modifying
     @Query("UPDATE User u SET u.score = :score WHERE u.id = :id")
     void updateScoreById(@Param("id")long id, @Param("score")long score);
+
+    @Modifying
+    @Query("UPDATE User u SET u.latitude = :latitude, u.longitude = :longitude WHERE u.id = :id")
+    void updateLocationById(@Param("id")long id, @Param("latitude") double latitude, @Param("longitude") double longitude);
 }

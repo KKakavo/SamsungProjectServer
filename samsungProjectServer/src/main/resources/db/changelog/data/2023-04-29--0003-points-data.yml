@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2023-04-29--0003-points-data
+      author: KKakavo
+      runOnChange: true
+      loadData:
+        primaryKey: id
+        file: data/csv/2023-04-29--0003-points-data.csv
+        relativeToChangelogFile: true
+        separator: ;
+        qoutChar: '"'
+        encoding: UTF-8
+        tableName: points

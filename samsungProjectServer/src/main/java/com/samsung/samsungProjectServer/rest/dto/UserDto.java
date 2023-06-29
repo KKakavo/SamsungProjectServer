@@ -17,6 +17,8 @@ public class UserDto {
     private String password;
     private long score;
     private String role;
+    private double latitude;
+    private double longitude;
 
     public static UserDto toDto(User user){
 
@@ -27,6 +29,8 @@ public class UserDto {
                 .password(user.getPassword())
                 .score(user.getScore())
                 .role(user.getRole())
+                .latitude(user.getLatitude())
+                .longitude(user.getLongitude())
                 .build();
 
     }
@@ -40,6 +44,8 @@ public class UserDto {
                 .password(userDto.getPassword())
                 .score(userDto.getScore())
                 .role(userDto.getRole())
+                .latitude(userDto.getLatitude())
+                .longitude(userDto.getLongitude())
                 .build();
 
     }

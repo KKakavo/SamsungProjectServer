@@ -48,3 +48,15 @@ databaseChangeLog:
               type: varchar(200)
               constraints:
                 nullable: false
+
+          - column:
+              name: latitude
+              type: float
+              constraints:
+                nullable: true
+
+          - column:
+              name: longitude
+              type: float
+              constraints:
+                nullable: true

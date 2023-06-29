@@ -1,8 +1,10 @@
 package com.samsung.samsungProjectServer.service.impl;
 
 import com.samsung.samsungProjectServer.domain.Shape;
+import com.samsung.samsungProjectServer.domain.User;
 import com.samsung.samsungProjectServer.repository.PointRepository;
 import com.samsung.samsungProjectServer.repository.ShapeRepository;
+import com.samsung.samsungProjectServer.repository.UserRepository;
 import com.samsung.samsungProjectServer.service.ShapeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -15,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ShapeServiceImpl implements ShapeService {
 
-    private static long controlSum;
+    private static long controlSum = 2;
     private final ShapeRepository shapeRepository;
     private final PointRepository pointRepository;
 

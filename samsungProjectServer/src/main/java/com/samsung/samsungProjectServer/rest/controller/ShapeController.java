@@ -1,6 +1,8 @@
 package com.samsung.samsungProjectServer.rest.controller;
 
+import com.samsung.samsungProjectServer.domain.Point;
 import com.samsung.samsungProjectServer.domain.Shape;
+import com.samsung.samsungProjectServer.domain.User;
 import com.samsung.samsungProjectServer.rest.dto.ShapeDto;
 import com.samsung.samsungProjectServer.service.ShapeService;
 import com.samsung.samsungProjectServer.service.UserService;
@@ -28,7 +30,10 @@ public class ShapeController {
     @PostMapping("/shape/all")
     public List<ShapeDto> saveAllShapes(@RequestBody List<ShapeDto> shapeDtoList, @RequestParam("score") long score){
         List<Shape> shapeList = shapeService.saveAllShapes(shapeDtoList.stream().map(ShapeDto::toDomainObject).collect(Collectors.toList()));
-        userService.updateUserScoreById(shapeList.get(0).getUser().getId(), score);
+        User user = shapeList.get(0).getUser();
+        Point point = shapeList.get(shapeList.size() - 1).getPointList().get(0);
+        userService.updateUserScoreById(user.getId(), score);
+        userService.updateUserLocationById(user.getId(), point.getLatitude(), point.getLongitude());
         return shapeList.stream().map(ShapeDto::toDto).collect(Collectors.toList());
     }
     @GetMapping("/shape/user/{id}")
