@@ -1,11 +1,5 @@
 nickname;email;password;score;role;latitude;longitude
-Nastya;email1;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;10;user;100.0;0.0
-Lena;email2;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;20;user;20.0;0.0
-CoolUser;email3;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;140;user;30.0;0.0
-SadUser;email4;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;0;user;40.0;0.0
-BestUser;email5;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;1402312;user;50.0;0.0
-InterestingUser;email6;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;777;user;60.0;0.0
-BadUser;email7;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;690;user;70.0;0.0
-User;email8;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;420;user;80.0;0.0
+Kakavo;email1;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;1000;user;55.6276369;37.3439574
+OMG;email2;$2a$10$LLP5zPKcTh4FxhLb.OX45urIuidfa.MmXAzfshTpiURx2e6zedJlm;500;user;55.6270772;37.3436092
 123;123;$2a$10$0ZN3aGJZN5DGgrqnswQ0pefvJ5icQJpLAgimUO.1iMI24SQgVo5Su;1088;user;45.0434608;41.9688796
 Nepretimov;nae1994@yandex.ru;$2a$10$dR70VvuTnj94LIrl9kwr8u/IkGTIvv0pbzeel4dbXQOdgeKLiJO7G;1315;user;45.0433826;41.9688548

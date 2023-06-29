@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ShapeServiceImpl implements ShapeService {
 
-    private static long controlSum = 2;
+    private static long controlSum = 4;
     private final ShapeRepository shapeRepository;
     private final PointRepository pointRepository;
 
